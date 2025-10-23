@@ -17,6 +17,7 @@ Type the Verilog code for the Traffic Light Controler
 Observe the Traffic Signal output.
 
 # code
+///
 module traffic_light_controller(
     input clk, rst,
     output reg [2:0] light  // {Red, Yellow, Green}
@@ -59,8 +60,10 @@ module traffic_light_controller(
     end
 
 endmodule
+///
 
-# Tes Bench
+# Test Bench
+///
 module tb_traffic_light;
     reg clk,rst;
     wire [2:0] light;
@@ -79,6 +82,7 @@ module tb_traffic_light;
         $monitor("Time=%0t | Lights={Red,Yellow,Green}=%b", $time, light);
     end
 endmodule
+///
 
 # output
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1f803f9-11a5-4071-ab60-93c8a23477a6" />
