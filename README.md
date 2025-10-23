@@ -17,13 +17,14 @@ Type the Verilog code for the Traffic Light Controler
 Observe the Traffic Signal output.
 
 # code
-///
+```
 module traffic_light_controller(
     input clk, rst,
     output reg [2:0] light  // {Red, Yellow, Green}
 );
 
     // State encoding
+  
   //  typedef enum reg [1:0] {RED=2'b00, GREEN=2'b01, YELLOW=2'b10} state_t;
  parameter [1:0]RED = 2'b00, GREEN=2'b01, YELLOW=2'b10 ;
  reg [1:0]state, next_state;  
@@ -60,10 +61,11 @@ module traffic_light_controller(
     end
 
 endmodule
-///
+```
+
 
 # Test Bench
-///
+```
 module tb_traffic_light;
     reg clk,rst;
     wire [2:0] light;
@@ -82,7 +84,7 @@ module tb_traffic_light;
         $monitor("Time=%0t | Lights={Red,Yellow,Green}=%b", $time, light);
     end
 endmodule
-///
+```
 
 # output
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1f803f9-11a5-4071-ab60-93c8a23477a6" />
